@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101a2c">
+  <title>Курьер кампуса — платформер</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Курьер кампуса">
+        <span class="brand-mark">✦</span>
+        <span><strong>PIXEL CAMPUS</strong><small>МИССИЯ: ДОСТАВКА</small></span>
+      </a>
+      <div class="top-status">
+        <span class="status-dot"></span> ОДИНОЧНАЯ ИГРА
+      </div>
+    </header>
+
+    <section class="intro">
+      <div>
+        <p class="eyebrow">ПРИКЛЮЧЕНИЕ НАЧИНАЕТСЯ ЗДЕСЬ</p>
+        <h1>Курьер <span>кампуса</span></h1>
+        <p class="subtitle">Собери три пропуска и доставь посылку в главный корпус.</p>
+      </div>
+      <div class="mission-tag"><span>МИССИЯ № 01</span><strong>СРОЧНАЯ ДОСТАВКА</strong></div>
+    </section>
+
+    <section class="game-shell" aria-label="Игровая область">
+      <div class="hud">
+        <div class="hud-item"><span class="hud-icon">✦</span><div><small>СОБРАНО</small><strong id="score">0 / 3</strong></div></div>
+        <div class="hud-item"><span class="hud-icon">🏆</span><div><small>РЕКОРД</small><strong id="best">0</strong></div></div>
+        <div class="hud-item mission-state"><span class="status-dot"></span><div><small>СТАТУС</small><strong id="statusText">ГОТОВ К СТАРТУ</strong></div></div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="960" height="540" aria-label="Платформер Курьер кампуса"></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <div class="overlay-symbol" id="overlaySymbol">✦</div>
+            <p class="eyebrow" id="overlayEyebrow">ТВОЁ ЗАДАНИЕ</p>
+            <h2 id="overlayTitle">Доставь посылку!</h2>
+            <p id="overlayText">Собери 3 пропуска, избегай опасной зоны и доберись до главного корпуса.</p>
+            <button class="primary-btn" id="overlayStart">Начать игру <span>→</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-controls">
+        <div class="control-hint">
+          <span class="keycap">A</span><span class="keycap">D</span>
+          <span class="hint-label">или</span>
+          <span class="keycap">←</span><span class="keycap">→</span>
+          <span class="hint-label">движение</span>
+          <span class="keycap space-key">SPACE</span>
+          <span class="hint-label">прыжок</span>
+        </div>
+        <div class="button-group">
+          <button class="secondary-btn" id="startBtn">▶ Старт</button>
+          <button class="secondary-btn" id="pauseBtn" disabled>Ⅱ Пауза</button>
+          <button class="secondary-btn" id="restartBtn">↻ Заново</button>
+        </div>
+        <div class="mobile-controls" aria-label="Сенсорное управление">
+          <button class="touch-btn" data-control="left" aria-label="Влево">←</button>
+          <button class="touch-btn" data-control="right" aria-label="Вправо">→</button>
+          <button class="touch-btn jump-touch" data-control="jump" aria-label="Прыжок">↑ ПРЫЖОК</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="info-card">
+        <div class="card-icon">🎮</div>
+        <div><h3>Как играть</h3><p>Используй A/D или стрелки для движения. Нажми Space или W, чтобы прыгнуть. Повторный прыжок в воздухе недоступен.</p></div>
+      </article>
+      <article class="info-card">
+        <div class="card-icon">📦</div>
+        <div><h3>Цель миссии</h3><p>Собери все три пропуска. Только после этого откроется доставка в главном корпусе.</p></div>
+      </article>
+      <article class="info-card">
+        <div class="card-icon">⚡</div>
+        <div><h3>Осторожно!</h3><p>Не падай в красную зону с электрическими разрядами. Если коснёшься её, миссия завершится.</p></div>
+      </article>
+    </section>
+
+    <footer>PIXEL CAMPUS <span>•</span> ПРАКТИЧЕСКАЯ РАБОТА № 3 <span>•</span> HTML / CSS / JAVASCRIPT</footer>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
